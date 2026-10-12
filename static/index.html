@@ -1,0 +1,145 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="theme-color" content="#f5f6f2">
+    <meta name="description" content="Get a data-informed estimate of your placement readiness and see the factors shaping your result.">
+    <title>Placement readiness | SkillsBridge</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="/static/styles.css">
+    <script src="/static/app.js" defer></script>
+  </head>
+  <body>
+    <div class="app-shell">
+      <header class="topbar">
+        <a class="brand" href="/" aria-label="SkillsBridge home">
+          <span class="brand-mark" aria-hidden="true"><span></span><span></span><span></span></span>
+          <span>skills<span class="brand-light">bridge</span></span>
+        </a>
+        <div class="topbar-right">
+          <span class="topbar-caption">STUDENT TOOLKIT</span>
+          <span class="api-status" id="api-status"><span class="status-dot"></span><span id="api-status-text">Connecting</span></span>
+        </div>
+      </header>
+
+      <main>
+        <section class="intro">
+          <div class="eyebrow"><span class="eyebrow-line"></span> YOUR NEXT STEP STARTS HERE</div>
+          <h1>How ready are you<br class="desktop-break"> for <span>your next opportunity?</span></h1>
+          <p class="intro-copy">Share a few details about your experience. Get a readiness estimate and a clearer picture of what’s helping you stand out.</p>
+          <div class="privacy-note"><span class="sparkle" aria-hidden="true">✳</span> Your profile is used to generate this estimate.</div>
+        </section>
+
+        <section class="workspace" aria-label="Placement readiness assessment">
+          <form class="profile-card" id="profile-form">
+            <div class="card-heading">
+              <div>
+                <div class="step-label"><span class="step-number">01</span> YOUR PROFILE</div>
+                <h2>Tell us about yourself</h2>
+                <p>Enter your current stats for a more useful estimate.</p>
+              </div>
+              <span class="required-label"><span class="required-star">*</span> Required</span>
+            </div>
+
+            <div class="progress" aria-live="polite">
+              <div class="progress-text"><span id="progress-label">0 of 6 required fields</span><span class="sample-actions"><button type="button" class="link-button" id="sample-button">Try sample profile</button><button type="button" class="link-button" id="reset-button">Reset</button></span></div>
+              <div class="progress-track"><div class="progress-bar" id="progress-bar"></div></div>
+            </div>
+
+            <div class="form-section">
+              <h3><span class="section-icon icon-academic" aria-hidden="true">A</span> Academic &amp; experience</h3>
+              <div class="field-grid">
+                <label class="field">
+                  <span>CGPA <span class="required-star">*</span></span>
+                  <span class="input-wrap"><input name="cgpa" type="number" min="0" max="10" step="0.01" placeholder="e.g. 8.2" required><span class="input-suffix">/ 10</span></span>
+                </label>
+                <label class="field">
+                  <span>Internships <span class="required-star">*</span></span>
+                  <span class="input-wrap"><input name="internships" type="number" min="0" step="1" placeholder="e.g. 1" required><span class="input-suffix">total</span></span>
+                </label>
+                <label class="field">
+                  <span>Projects <span class="required-star">*</span></span>
+                  <span class="input-wrap"><input name="projects" type="number" min="0" step="1" placeholder="e.g. 4" required><span class="input-suffix">total</span></span>
+                </label>
+                <label class="field">
+                  <span>Certifications <span class="required-star">*</span></span>
+                  <span class="input-wrap"><input name="certifications" type="number" min="0" step="1" placeholder="e.g. 2" required><span class="input-suffix">total</span></span>
+                </label>
+              </div>
+            </div>
+
+            <div class="form-section skills-section">
+              <h3><span class="section-icon icon-skills" aria-hidden="true">↗</span> Skills &amp; communication</h3>
+              <div class="field-grid">
+                <label class="field">
+                  <span>Coding score <span class="required-star">*</span></span>
+                  <span class="input-wrap"><input name="coding_score" type="number" min="0" max="100" step="1" placeholder="e.g. 75" required><span class="input-suffix">/ 100</span></span>
+                </label>
+                <label class="field">
+                  <span>Communication score <span class="required-star">*</span></span>
+                  <span class="input-wrap"><input name="communication_score" type="number" min="0" max="100" step="1" placeholder="e.g. 60" required><span class="input-suffix">/ 100</span></span>
+                </label>
+              </div>
+              <p class="field-hint">Use your latest assessment or mock interview scores where possible.</p>
+            </div>
+
+            <details class="advanced-fields">
+              <summary><span class="advanced-plus" aria-hidden="true">+</span><span><strong>Add more detail</strong><small>Optional signals for a more complete profile</small></span><span class="summary-chevron" aria-hidden="true">⌄</span></summary>
+              <div class="field-grid advanced-grid">
+                <label class="field"><span>DSA problems solved</span><span class="input-wrap"><input name="dsa_problems" type="number" min="0" step="1" value="0"><span class="input-suffix">total</span></span></label>
+                <label class="field"><span>Aptitude score</span><span class="input-wrap"><input name="aptitude_score" type="number" min="0" max="100" step="1" value="0"><span class="input-suffix">/ 100</span></span></label>
+                <label class="field"><span>LeetCode rating</span><span class="input-wrap"><input name="leetcode_rating" type="number" min="0" max="100" step="1" value="0"><span class="input-suffix">/ 100</span></span></label>
+                <label class="field"><span>GitHub contributions</span><span class="input-wrap"><input name="github_contributions" type="number" min="0" step="1" value="0"><span class="input-suffix">total</span></span></label>
+                <label class="field"><span>Hackathons attended</span><span class="input-wrap"><input name="hackathons" type="number" min="0" step="1" value="0"><span class="input-suffix">total</span></span></label>
+                <label class="field"><span>AI / ML skill score</span><span class="input-wrap"><input name="ai_ml_skill" type="number" min="0" max="100" step="1" value="0"><span class="input-suffix">/ 100</span></span></label>
+                <label class="field"><span>System design score</span><span class="input-wrap"><input name="system_design" type="number" min="0" max="100" step="1" value="0"><span class="input-suffix">/ 100</span></span></label>
+                <label class="field"><span>Resume score</span><span class="input-wrap"><input name="resume_score" type="number" min="0" max="100" step="1" value="0"><span class="input-suffix">/ 100</span></span></label>
+                <label class="field"><span>Mock interview score</span><span class="input-wrap"><input name="mock_interview_score" type="number" min="0" max="100" step="1" value="0"><span class="input-suffix">/ 100</span></span></label>
+              </div>
+            </details>
+
+            <div class="form-footer">
+              <p><span class="lock-icon" aria-hidden="true">◇</span> Estimates are guidance, not a guarantee of placement.</p>
+              <button class="submit-button" type="submit"><span class="button-label">Get my estimate</span><span class="button-arrow" aria-hidden="true">↗</span></button>
+            </div>
+            <p class="form-error" id="form-error" role="alert" hidden></p>
+          </form>
+
+          <aside class="results-panel" aria-live="polite" aria-atomic="true">
+            <div class="result-topline"><div class="step-label"><span class="step-number">02</span> YOUR SNAPSHOT</div><span class="result-sparkle" aria-hidden="true">✳</span></div>
+            <div class="empty-state" id="empty-state">
+              <div class="orbit-art" aria-hidden="true"><span class="orbit orbit-one"></span><span class="orbit orbit-two"></span><span class="orbit-core"><span>✳</span></span><span class="orbit-dot"></span></div>
+              <h2>Your next step,<br>made clearer.</h2>
+              <p>Complete your profile and your readiness snapshot will appear here.</p>
+              <div class="empty-divider"><span></span><span>WHAT YOU’LL GET</span><span></span></div>
+              <div class="benefit"><span class="benefit-check" aria-hidden="true">✓</span><span>A personalized readiness estimate</span></div>
+              <div class="benefit"><span class="benefit-check" aria-hidden="true">✓</span><span>Signals influencing your snapshot</span></div>
+            </div>
+            <div class="result-state" id="result-state" hidden>
+              <p class="result-kicker">YOUR READINESS ESTIMATE</p>
+              <div class="score-wrap">
+                <div class="score-ring" id="score-ring"><div class="score-inner"><strong id="score-value">—</strong><span>out of 100</span></div></div>
+              </div>
+              <div class="result-badge" id="result-badge"></div>
+              <p class="result-delta" id="result-delta" hidden></p>
+              <p class="live-note">Edit any field and your estimate updates automatically.</p>
+              <p class="result-description" id="result-description"></p>
+              <div class="factor-heading"><span>WHAT’S SHAPING YOUR RESULT</span><span class="factor-heading-line"></span></div>
+              <div class="factor-group"><span class="factor-label">BUILD ON</span><div class="factor-list" id="strongest-factors"></div></div>
+              <div class="factor-group"><span class="factor-label">GROW NEXT</span><div class="factor-list" id="weakest-factors"></div></div>
+              <p class="result-disclaimer">This estimate is a guide to help you plan—not a guarantee of placement.</p>
+            </div>
+            <div class="loading-state" id="loading-state" hidden>
+              <span class="loader" aria-hidden="true"></span><strong>Putting your snapshot together…</strong><span>Usually just a moment.</span>
+            </div>
+          </aside>
+        </section>
+      </main>
+
+      <footer class="page-footer"><span>SKILLSBRIDGE <span class="footer-dot">·</span> PLACEMENT READINESS</span><span>Small steps. Stronger starts.</span></footer>
+    </div>
+  </body>
+</html>
